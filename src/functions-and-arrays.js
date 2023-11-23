@@ -1,41 +1,113 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(num1, num2) {
+  if(num1 >= num2){
+    return num1
+  }
+  else {
+    return num2
+  }
+}
+console.log(maxOfTwoNumbers(2,3))
 
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
-
+function findLongestWord(words) {
+let longestWord = "";  
+  if (words.length === 0) {
+    return null;
+}
+  else {
+    words.forEach(function(currentWord){
+      if (currentWord.length>longestWord.length){
+        return longestWord=currentWord;
+      }
+       
+    })
+    return longestWord
+  }
+}
+console.log(findLongestWord(words));
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
-
+function sumNumbers(numbers) {
+  if (sumNumbers.length === 0) {
+    return 0;
+}
+  else {
+    let sum=0;
+    numbers.forEach(function(currentNumb){
+      sum+=currentNumb;
+    })
+    return sum;
+  }
+}
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
-
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+function sum(array) {
+  if (array.length === 0) {
+    return 0;}
+  else {
+    let sum=0;
+    array.forEach(function(currentElem){
+      if (typeof currentElem==="string"){
+      sum+=currentElem.length;  
+      }
+      else if (typeof currentElem==="boolean"){
+        if(currentElem===true){sum+=1}
+      }
+      else if (typeof currentElem==="number"){
+        sum+=currentElem;
+      }
+      else {
+        throw new Error("Your array should only contain numbers, strings, or booleans.");
+      }
+    })
+    return sum;
+    }
+}
 
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
-
+function averageNumbers(array) {
+  if (array.length === 0) {
+    return null;
+}
+  else {
+  return sumNumbers(array)/array.length;
+}}
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(array) {
+  if (array.length === 0) {
+    return null;
+}
+  else {
+  return sum(array)/array.length;
+ }
+}
 
 // Bonus - Iteration #4.1
-function avg() {}
+function avg(array) {
+  if (array.length === 0) {
+    return null;
+}
+  else {
+  return sum(array)/array.length;
+ }
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -52,14 +124,42 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(array) {
+  if (array.length === 0) {
+    return null;
+}
+  else {
+    let uniqueArray=[];
+    array.forEach(function(currentWord){
+      if (!uniqueArray.includes(currentWord)){
+        uniqueArray.push(currentWord);} 
+      })
+      return uniqueArray; 
+}
+}
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(array,testedWord) {
+  if (array.length === 0) {
+    return null;
+}
+  else {
+    let result=[];
+    array.forEach(function(currentWord){
+      if (currentWord===testedWord){
+        return result+="true";
+      }
+      else {return result+="false"}
+    })
+    if (result.includes("true")){
+    return true}
+    else {return false}
+}
+}
 
 
 
@@ -78,7 +178,21 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(array,testedWord) {
+if (array.length === 0) {
+    return 0;
+}
+else { 
+  let counter=0;
+  array.forEach(function(currentWord){
+    if (currentWord===testedWord){
+      counter++;
+    }
+  })
+  return counter;
+
+}
+}
 
 
 
@@ -106,7 +220,13 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() {}
+function greatestProduct(matrix) {
+  matrix.forEach (function(currentArray){
+    currentArray.forEach (function (currentNumber){
+      
+    })
+  })
+}
 
 
 
